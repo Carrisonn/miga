@@ -1,0 +1,33 @@
+.card {
+  padding: 1rem;
+  border: 1px solid var(--neutral-color);
+  border-radius: .5rem;
+}
+
+.save_recepie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    text-wrap: balance;
+    font-weight: 700;
+  }
+}
+
+.prep_time {
+  background-color: #b8ebd1;
+  padding: .5rem;
+  border-radius: .5rem;
+}
+
+.ingredients_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: var(--small-text);
+
+  span {
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,22 @@
+form {
+  width: 100%;
+
+  .field {
+    display: flex;
+    background-color: var(--white-color);
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: var(--shadow);
+  }
+
+  input {
+    width: 100%;
+    font-size: 1.8rem;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
