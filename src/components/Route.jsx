@@ -1,11 +1,12 @@
+import { match } from 'path-to-regexp'
 import { useRouter } from '../hooks/useRouter.jsx'
 
 export function Route({ path, component: Component }) {
   const { currentPath } = useRouter()
-  const routeRegex = new RegExp("^" + path.replace(/:\w+/g, "([^/]+)") + "$")
-  const match = currentPath.match(routeRegex)
+  const matcherFn = match(path, { decode: decodeURIComponent })
+  const matched = matcherFn(currentPath)
 
-  if (!match) return null
+  if (!matched) return null
 
   return <Component />
 }
