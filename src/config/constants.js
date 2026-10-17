@@ -3,6 +3,8 @@ export const API_URL_SEARCH = `${API_URL}?search=`
 
 export const API_KEY = import.meta.env.VITE_API_KEY
 
+export const STORAGE_KEY = 'user-recepies'
+
 export const PATHS = {
   home: '/',
   myRecepies: '/my-recepies',

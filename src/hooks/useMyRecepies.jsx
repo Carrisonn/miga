@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from './useRouter.jsx'
-import { recepieStore } from '../store/recepiesStore.js'
+import { STORAGE_KEY } from '../config/constants.js'
 
 export function useMyRecepies(idText) {
   const { navigateTo } = useRouter()
   const [query, setQuery] = useState('')
-  const [savedRecepies, setSavedRecepies] = useState(() => JSON.parse(localStorage.getItem('userRecepies')) || [])
+  const [savedRecepies, setSavedRecepies] = useState(() => JSON.parse(localStorage.getItem(STORAGE_KEY)) || [])
 
   useEffect(() => {
-    localStorage.setItem('userRecepie', JSON.stringify(savedRecepies))
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(savedRecepies))
   }, [savedRecepies])
 
   useEffect(() => {
