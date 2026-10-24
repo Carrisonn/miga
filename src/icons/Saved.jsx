@@ -1,4 +1,4 @@
-export function SavedIcon() {
+export function Saved() {
   return (
     <svg height='24px' width='24px' viewBox="0 0 24 24" fill="none" >
       <g strokeWidth="0"></g>
