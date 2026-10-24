@@ -32,12 +32,14 @@
 
 :root {
   --title-size: 2.8rem;
+  --subtitle-size: 2.4rem;
   --text-size: 1.8rem;
   --small-size: 1.4rem;
+  --mini-size: 1.2rem;
 
   --primary-color: #E07A5F;
   --secondary-color: #81B29A;
-  --tertiary-color: #F2CC8F;
+  --tertiary-color: #f0d1a0;
   --neutral-color: #1F2421;
   --white-color: #ffffff;
   --grey-color: #e7e7e7;
@@ -61,6 +63,11 @@ body {
 
 h1 {
   font-size: var(--title-size);
+  font-family: 'Newsreader';
+}
+
+h2 {
+  font-size: var(--subtitle-size);
   font-family: 'Newsreader';
 }
 
@@ -136,6 +143,10 @@ form {
   font-size: var(--small-size);
 }
 
+.mini_text {
+  font-size: var(--mini-size);
+}
+
 .text_center {
   text-align: center;
 }
@@ -144,12 +155,17 @@ form {
   background-color: var(--grey-color);
   border-radius: .5rem;
   padding: .2rem .4rem;
+  text-align: center;
 }
 
 .gap_x {
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 .reset_btn {
@@ -159,29 +175,4 @@ form {
   border-radius: .5rem;
   box-shadow: var(--shadow);
   font-weight: bold;
-}
-
-.toast {
-  position: fixed;
-  bottom: 24px;
-  left: 6px;
-  right: 6px;
-  box-shadow: var(--shadow);
-  animation: toast-in 0.3s ease-out;
-  background-color: var(--grey-color);
-  padding: .5rem 1rem;
-  border: 1px solid var(--neutral-color);
-  border-radius: .5rem;
-}
-
-@keyframes toast-in {
-  from {
-    opacity: 0;
-    transform: translateY(15px) scale(0.95);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
 }
