@@ -6,7 +6,5 @@ export function Route({ path, component: Component }) {
   const matcherFn = match(path, { decode: decodeURIComponent })
   const matched = matcherFn(currentPath)
 
-  if (!matched) return null
-
-  return <Component />
+  return matched ? <Component /> : null
 }

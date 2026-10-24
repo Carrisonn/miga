@@ -1,10 +1,10 @@
 import styles from './Card.module.css'
 import { Link } from './Link.jsx'
-import { SaveIcon } from './SaveIcon.jsx'
-import { SavedIcon } from './SavedIcon.jsx'
+import { APP_ICONS } from '../config/constants.js'
 
 export function Card({ recepie, isSaved, toogleRecepie }) {
   const { id, name, prep_time, servings, ingredients } = recepie
+  const { SaveIcon, SavedIcon } = APP_ICONS
   const iconButton = isSaved ? <SavedIcon /> : <SaveIcon />
 
   return (
@@ -20,7 +20,7 @@ export function Card({ recepie, isSaved, toogleRecepie }) {
         </div>
         <div className='gap_x'>
           <p className={`small_text ${styles.prep_time}`}>{prep_time} min</p>
-          <p className={`small_text ${styles.servings}`}>{servings} servings</p>
+          <p className='small_text'>{servings} servings</p>
         </div>
         <hr />
 
@@ -29,7 +29,7 @@ export function Card({ recepie, isSaved, toogleRecepie }) {
           {
             ingredients
               .slice(0, 7)
-              .map(({ id, name }) => <span className='small_text pill' key={id}>{name}</span>)
+              .map(({ id, name }) => <span className='small_text pill bold' key={id}>{name}</span>)
           }
         </div>
       </div>

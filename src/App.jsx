@@ -1,17 +1,16 @@
 import { Route } from './components/Route.jsx'
 import { Header } from './components/Header.jsx'
-import { Home } from './pages/Home.jsx'
-import { MyRecepies } from './pages/MyRecepies.jsx'
-import { RecepieDetail } from './pages/RecepieDetail.jsx'
-import { PATHS } from './config/constants.js'
+import { APP_ROUTES } from './config/constants.js'
 
 function App() {
+  const { home, myRecepies, recepieDetail } = APP_ROUTES
+
   return (
     <>
       <Header />
-      <Route path={PATHS.home} component={Home} />
-      <Route path={PATHS.myRecepies} component={MyRecepies} />
-      <Route path={PATHS.recepieDetail} component={RecepieDetail} />
+      <Route path={home.path} component={home.component} />
+      <Route path={myRecepies.path} component={myRecepies.component} />
+      <Route path={recepieDetail.path} component={recepieDetail.component} />
     </>
   )
 }
