@@ -14,12 +14,16 @@ export function Card({ recepie, isSaved, toogleRecepie }) {
           <Link href={`/recepie-detail/${id}`}>
             <p>{name}</p>
           </Link>
-          <button type='button' onClick={() => toogleRecepie(recepie)}>
+          <button
+            className='button'
+            type='button'
+            onClick={() => toogleRecepie(recepie)}
+          >
             {iconButton}
           </button>
         </div>
         <div className='gap_x'>
-          <p className={`small_text ${styles.prep_time}`}>{prep_time} min</p>
+          <p className='small_text pill_green'>{prep_time} min</p>
           <p className='small_text'>{servings} servings</p>
         </div>
         <hr />
