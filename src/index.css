@@ -39,7 +39,8 @@
 
   --primary-color: #E07A5F;
   --secondary-color: #81B29A;
-  --tertiary-color: #f0d1a0;
+  --tertiary-color: #fde3b8;
+  --danger-color: #fa3636;
   --neutral-color: #1F2421;
   --white-color: #ffffff;
   --grey-color: #e7e7e7;
@@ -84,16 +85,15 @@ a {
   text-decoration: none;
 }
 
-hr {
-  color: var(--grey-color);
-}
-
-button {
+.button {
   border: none;
   background-color: inherit;
   font-size: var(--text-size);
   font-family: 'Plus Jakarta Sans';
   cursor: pointer;
+  color: var(--white-color);
+  font-weight: bold;
+  text-align: center;
 }
 
 main {
@@ -132,7 +132,7 @@ form {
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .list {
@@ -158,6 +158,12 @@ form {
   text-align: center;
 }
 
+.pill_green {
+  background-color: #b8ebd1;
+  padding: .2rem .4rem;
+  border-radius: .5rem;
+}
+
 .gap_x {
   display: flex;
   gap: 1rem;
@@ -168,6 +174,10 @@ form {
   font-weight: 700;
 }
 
+.cursive {
+  font-style: italic;
+}
+
 .reset_btn {
   background-color: var(--primary-color);
   padding: .5rem 1rem;
@@ -175,4 +185,47 @@ form {
   border-radius: .5rem;
   box-shadow: var(--shadow);
   font-weight: bold;
+}
+
+.normal {
+  background-color: var(--primary-color);
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+}
+
+.danger {
+  background-color: var(--danger-color);
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+}
+
+ul {
+  list-style-position: inside;
+
+
+  li {
+    margin-bottom: 1rem;
+    font-size: var(--text-size);
+    text-wrap: balance;
+
+    span {
+      font-size: inherit;
+
+    }
+  }
+}
+
+ol {
+  list-style-position: inside;
+
+  li {
+    margin-bottom: 1rem;
+    font-size: var(--text-size);
+    text-wrap: balance;
+    line-height: 1.5;
+
+    &::marker {
+      color: var(--primary-color);
+    }
+  }
 }
