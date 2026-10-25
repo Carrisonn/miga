@@ -1,11 +1,17 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useFetch } from './useFetch.jsx'
 import { API_URL, API_URL_SEARCH } from '../config/constants.js'
 
-export function useApi() {
+export function useApi(slug = '') {
   const { getData } = useFetch()
   const [apiResponse, setApiResponse] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    if (!slug) return
+
+    getRecepie(slug)
+  }, [slug])
 
   async function getRandomRecepies() {
     setIsLoading(true)
