@@ -4,16 +4,18 @@ import { Link } from './Link.jsx'
 
 export function Header() {
   const { currentPath } = useRouter()
-  const path = currentPath === '/' ? '/my-recepies' : '/'
-  const linkText = currentPath === '/' ? 'My recepies' : 'Home'
+
+  const dataLink = currentPath === '/'
+    ? { path: '/my-recepies', text: 'My Recepies' }
+    : { path: '/', text: 'Home' }
 
   return (
     <header>
       <Link href='/'>
         <p>MIGA</p>
       </Link>
-      <Link href={path}>
-        {linkText}
+      <Link href={dataLink.path}>
+        {dataLink.text}
       </Link>
     </header>
   )
