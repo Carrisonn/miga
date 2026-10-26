@@ -10,6 +10,7 @@ import { Servings } from '../icons/Servings.jsx'
 import { Save } from '../icons/Save.jsx'
 import { Saved } from '../icons/Saved.jsx'
 import { Search } from '../icons/Search.jsx'
+import { Arrow } from '../icons/Arrow.jsx'
 
 export const API_URL = 'https://recipeapi.io/api/v1/recipes'
 export const API_URL_SEARCH = `${API_URL}?search=`
@@ -42,5 +43,6 @@ export const APP_ICONS = {
   ServingsIcon: Servings,
   SaveIcon: Save,
   SavedIcon: Saved,
-  SearchIcon: Search
+  SearchIcon: Search,
+  ArrowIcon: Arrow
 }
