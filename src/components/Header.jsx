@@ -1,4 +1,3 @@
-import './Header.module.css'
 import { useRouter } from '../hooks/useRouter.jsx'
 import { Link } from './Link.jsx'
 
