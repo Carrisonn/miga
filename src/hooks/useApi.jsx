@@ -6,6 +6,7 @@ export function useApi(slug = '') {
   const { getData } = useFetch()
   const [apiResponse, setApiResponse] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState({ error: null })
 
   useEffect(() => {
     if (!slug) return
@@ -18,11 +19,11 @@ export function useApi(slug = '') {
 
     try {
       const [error, data] = await getData(API_URL)
-      if (error) return console.log(error) // todo: manejar esto
+      if (error) return setError(error)
 
       setApiResponse(data)
     } catch (error) {
-      console.log(error) // todo: manejar esto
+      setError({ error: 'Service not available' })
     } finally {
       setIsLoading(false)
     }
@@ -33,11 +34,11 @@ export function useApi(slug = '') {
 
     try {
       const [error, data] = await getData(`${API_URL_SEARCH}${recepie}`)
-      if (error) return console.log(error) // todo: manejar esto
+      if (error) return setError(error)
 
       setApiResponse(data)
     } catch (error) {
-      console.log(error) // todo: manejar esto
+      setError({ error: 'Service not available' })
     } finally {
       setIsLoading(false)
     }
@@ -48,11 +49,11 @@ export function useApi(slug = '') {
 
     try {
       const [error, data] = await getData(`${API_URL}/${slug}`)
-      if (error) return console.log(error) // todo: manejar esto
+      if (error) return setError(error)
 
       setApiResponse(data)
     } catch (error) {
-      console.log(error) // todo: manejar esto
+      setError({ error: 'Service not available' })
     } finally {
       setIsLoading(false)
     }
@@ -61,6 +62,7 @@ export function useApi(slug = '') {
   return {
     apiResponse,
     isLoading,
+    error,
     getRandomRecepies,
     searchRecepie,
     getRecepie
