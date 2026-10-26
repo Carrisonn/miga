@@ -1,0 +1,26 @@
+.floating_btn {
+  position: fixed;
+  right: 25px;
+  bottom: 20px;
+  z-index: 9;
+  animation: fadeIn .2s ease-in;
+  border-radius: 50%;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--primary-color);
+  cursor: pointer;
+
+  svg {
+    margin: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
